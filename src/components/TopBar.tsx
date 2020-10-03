@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { SessionButton } from './SessionButton';
+import { Button } from './Button';
 
-const TopBarDiv = styled.div`
+const TopBarDiv: any = styled.div`
 	position: fixed;
 	top: 0;
 	width: 100vw;
@@ -12,7 +12,7 @@ const TopBarDiv = styled.div`
 	box-shadow: 0 0 3px #222;
 `;
 
-const Wrap = styled.div`
+const Wrap: any = styled.div`
 	padding-left: 20px;
 	padding-right: 20px;
 	padding-top: 13px;
@@ -20,19 +20,19 @@ const Wrap = styled.div`
 	flex-direction: row;
 `;
 
-const Title = styled.h1`
+const Title: any = styled.h1`
 	cursor: pointer;
 	width: 220px;
 `;
 
-const Options = styled.div`
+const Options: any = styled.div`
 	padding-top: 10px;
 	margin-left: 30px;
 	display: flex;
 	flex-direction: row;
 `;
 
-const Option = styled.h3`
+const Option: any = styled.h3`
 	cursor: pointer;
 	margin-left: 20px;
 	&:hover {
@@ -40,7 +40,7 @@ const Option = styled.h3`
 	}
 `;
 
-const ButtonWrap = styled.div`
+const ButtonWrap: any = styled.div`
 	position: fixed;
 	right: 20px;
 	display: grid;
@@ -70,8 +70,8 @@ export function TopBar() {
 					</Option>
 				</Options>
 				<ButtonWrap>
-					<SessionButton text="Create a session" />
-					<SessionButton text="Join a session" />
+					<Button text="Create a session" />
+					<Button text="Join a session" />
 				</ButtonWrap>
 			</Wrap>
 		</TopBarDiv>

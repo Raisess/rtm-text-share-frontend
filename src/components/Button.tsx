@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Button = styled.button`
+const ButtonStyle: any = styled.button`
 	border: none;
-	background-color: red;
+	background-color: #b51b32;
 	color: #fff;
 	height: 40px;
 	font-size: 20px;
@@ -13,23 +13,26 @@ const Button = styled.button`
 	padding-right: 10px;
 	border-radius: 5px;
 	cursor: pointer;
+
 	&:hover {
 		transition: 0.2s;
-		background-color: #00ff00;
+		background-color: #1bbf83;
 		color: black;
 	}
 `;
 
-interface ISessionButton {
+interface IButtonProps {
 	text:        string;
 	redirectTo?: string;
 }
 
-export function SessionButton(props: ISessionButton) {
+export function Button(props: IButtonProps) {
+	const { redirectTo, text } = props;
+
 	return (
-		<Button onClick={() => window.location.href = props.redirectTo ? props.redirectTo : '/'}>
-			{props.text}
-		</Button>
+		<ButtonStyle onClick={() => window.location.href = redirectTo ? redirectTo : '/'}>
+			{text}
+		</ButtonStyle>
 	);
 }
 
