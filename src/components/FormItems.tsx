@@ -32,18 +32,19 @@ interface IInputProps {
 	id:           string;
 	type_?:       string;
 	value?:       string;
+	styles?:      any;
 	placeholder?: string;
 }
 
 export function Input(props: IInputProps) {
-	const { id, type_, placeholder } = props;
+	const { id, type_, placeholder, styles } = props;
 
-	return <InputStyle id={id} type={type_} placeholder={placeholder ? placeholder : ''} />
+	return <InputStyle style={styles ? styles : {}} id={id} type={type_} placeholder={placeholder ? placeholder : ''} />
 }
 
 export function SubmitFormButton(props: IInputProps) {
-	const { id, value } = props;
+	const { id, value, styles } = props;
 
-	return <SubmitFormButtonStyle type='submit' id={id} value={value} />
+	return <SubmitFormButtonStyle style={styles ? styles : {}} type='submit' id={id} value={value} />
 }
 
